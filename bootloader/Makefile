@@ -2,10 +2,9 @@
 # BEGIN CONFIGURATION
 ###########################################################
 
-MCU=18f2550
+MCU=18f25k50
 
-# CC=sdcc
-CC=~/projekte/zufallszahlengenerator/bootloader/puf-1.1/tools/bin/sdcc
+CC=sdcc
 AS=gpasm
 LD=gplink
 SC=srec_cat
@@ -17,7 +16,7 @@ OUTPUT=bootloader
 ###########################################################
 
 
-OFLAGS=--obanksel=9 --optimize-cmp --optimize-df --denable-peeps --opt-code-size
+OFLAGS=--use-non-free --optimize-cmp --optimize-df --denable-peeps --opt-code-size
 CFLAGS=-S -mpic16 -p$(MCU) -Wall -I/usr/share/sdcc/include/pic16 -I. $(OFLAGS)
 ASFLAGS=
 LDFLAGS=-I/usr/share/sdcc/lib/pic16 -w -r -m -s $(MCU).lkr

@@ -1,6 +1,6 @@
 
 OUTPUT=example
-MCU=18f2550
+MCU=18f25k50
 
 CC=sdcc
 AS=gpasm
