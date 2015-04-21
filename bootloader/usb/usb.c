@@ -160,10 +160,10 @@ void suspend(void) {
 	UIRbits.IDLEIF = 0;
 	UCONbits.SUSPND = 1;
 
-	PIR2bits.USBIF = 0;
-	INTCONbits.RBIF = 0;
-	PIE2bits.USBIE = 1;
-	INTCONbits.RBIE = 1;
+	PIR3bits.USBIF = 0;
+	//INTCONbits.RBIF = 0;
+	PIE3bits.USBIE = 1;
+	//INTCONbits.RBIE = 1;
 
 	// disable the USART
 	RCSTAbits.CREN = 0;
@@ -175,8 +175,8 @@ void suspend(void) {
 	RCSTAbits.CREN = 1;
 	TXSTAbits.TXEN = 1;
 
-	PIE2bits.USBIE = 0;
-	INTCONbits.RBIE = 0;
+	PIE3bits.USBIE = 0;
+	//INTCONbits.RBIE = 0;
 }
 
 // Full speed devices get a Start Of Frame (SOF) packet every 1 millisecond.
